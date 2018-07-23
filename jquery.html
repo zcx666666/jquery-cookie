@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="E:/cashier/js/jquery-1.7.2.min.js"></script>
+    <script src="E:/cashier/js/carhartl-jquery-cookie-92b7715/jquery.cookie.js"></script>
+</head>
+<body>
+    
+    <script>
+
+
+        /*
+            jquery中cookie的使用方法
+                其实cookie就是来存一些数据，出于安全性考虑，所以关于不能让别人知道的东西尽量
+                不要存在cookie中。其实也是把一些不重要的数据存入到浏览器中，减少请求次数
+                下载与引入:jquery.cookie.js基于jquery；先引入jquery
+                再引入：jquery.cookie.js；下载：http://plugins.jquery.com/cookie/
+
+
+
+
+
+            只有一个参数的时候
+                第一个参数为读取cookie
+            只有两个参数的时候
+                第一个参数为设置cookie的key值，第二个参数为设置cookie的value值
+            只有三个参数的时候
+                第一个参数为设置cookie的key值，第二个参数为设置cookie的value值，
+                第三个参数为一个对象{
+                                expires:7,                  
+                                path:'/',
+                                domain:'jquery.com',
+                                secure:true
+                                }
+                expires：（Number|Date）有效期；设置一个整数时，单位是天；也可以设置一个日期对象作为Cookie的过期日期；
+                path：（String）创建该Cookie的页面路径；
+                domain：（String）创建该Cookie的页面域名；
+                secure：（Booblean）如果设为true，那么此Cookie的传输会要求一个安全协议，例如：HTTPS；              
+
+
+            
+            生成cookie
+                1.添加一个"会话cookie"
+                    
+                    $.cookie('name', '超学');
+                    创建一个cookie，因为没有设置cookie的一个有效期，所以他默认的是
+                    浏览器关闭清楚cookie。第一个参数为name，第二个参数为超学
+
+                2.创建一个cookie并设置有效期
+                    
+                    $.cookie('name', '超学', { expires: 11 });
+                    当需要设置cookie的有效期的时候直接加入第三个参数，为一个对象
+                    key值为expires，value为有效期（以天计算）
+                
+                3.创建一个cookie并设置 cookie的有效路径
+
+                    $.cookie('name', '超学', { expires: 11, path: '/' });
+                    在默认情况下，只有设置 cookie的网页才能读取该 cookie。
+                    如果想让一个页面读取另一个页面设置的cookie，必须设置cookie的路径。
+                    cookie的路径用于设置能够读取 cookie的顶级目录。将这个路径设置为网站的根目录，
+                    可以让所有网页都能互相读取 cookie （一般不要这样设置，防止出现冲突）。
+
+
+
+            读取cookie
+                $.cookie('name');
+
+            删除cookie
+                $.cookie('name', null);   //通过传递null作为cookie的值即可
+
+            
+
+        使用jquery的cookie谁都会遇到的问题
+        
+            最近困扰我很多问题，最关键的是这个jquery中的cookie不好使，我就是按照流程一步一步来的
+            但是最后没有。很费解，查了很多东西。最后也没弄出来，突然间看到一个帖子，我才想起来我之前
+            看过的一个帖子，很多人可能都会被坑在这里。真是得细心点，其实在哪里跌倒一定不会再跌第二次
+            希望大家遇见这个坑的时候能够越过。
+            jquery的cookie有一个缺点就是使用他的时候必须是放到测试服务器上去操作才会生效，
+            如果在本地是不会生效的。我打印了一天都是undefiend。所以大家一定不要遇见这个问题
+        
+        */
+        $(function(){
+            $.cookie('name', '超学');
+            
+        })
+    
+
+
+
+
+
+
+        
+        // var str = {
+        //             "BP_EXT_NUM":"12011000006756","BP_NAME1":"王亮","BP_NUM":"","BP_ID_NUMBER":"130724199408101990","BP_ID_TYPE":"01","NOTIFY_URL":"http://10.18.172.1:8080/SZIS/bankAccount/authorizeResultNotify","RETURN_URL":"","ZBANK_SQID":"",
+        //                 "type":"dataEncrypt",
+        //                 "keyFlag":"99"
+        //             }
+        // console.log(JSON.stringify(str))
+        // var strs = JSON.stringify(str)
+        
+        // function strToJson(str){
+        //     console.log(eval('(' + str + ')'))
+        //     var json = eval('(' + str + ')');
+        //     return json;
+        // }
+        // console.log(strToJson(strs))
+    
+    
+    
+    </script>
+    
+</body>
+</html>
